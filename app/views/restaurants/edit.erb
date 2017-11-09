@@ -1,0 +1,15 @@
+<h2 class="text-c">Need to update your place? We got you</h2>
+
+<% if @errors %>
+  <%= erb :"_errors", locals: { errors: @errors } %>
+<% end %>
+
+<form method="POST" action="/restaurants/<%= @restaurant.id  %>">
+  <input type="hidden" name="_method" value="PUT">
+  <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="restaurant[name]" placeholder="Name" value="<%= @restaurant.name %>">
+  <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="restaurant[location]" placeholder="Location" value="<%= @restaurant.location %>">
+  <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="restaurant[cuisine]" placeholder="Cuisine" value="<%= @restaurant.cuisine %>">
+  <input class="block w-70 mar-t-2 mar-b-3 pad-2 round-1 text-c submit center" type="submit" value="Edit">
+</form>
+
+

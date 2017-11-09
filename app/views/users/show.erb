@@ -1,2 +1,16 @@
 <h3><%= @user.username %> 's Profile Page</h3>
 
+<h3>Belp Reviews since joining:</h3>
+
+<div class="restaurant-box">
+  <ul>
+    <% @user.reviews.each do |review| %>
+
+    <li>
+        <p><%= review.restaurant.name %></p>
+         <p><%= review.rating%> </p>
+         <p><%= review.comments%> </p>
+       </li>
+    <% end %>
+    </ul>
+</div>

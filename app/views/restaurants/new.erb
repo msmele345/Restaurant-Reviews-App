@@ -1,0 +1,14 @@
+<h2 class="text-c">Got a new hotspot with good eats? Tell us about it!</h2>
+
+<% if @errors %>
+  <%= erb :"_errors", locals: { errors: @errors } %>
+<% end %>
+
+<form method="POST" action="/restaurants">
+  <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="restaurant[name]" placeholder="Name">
+  <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="restaurant[location]" placeholder="Location">
+  <input class="block w-70 mar-t-2 mar-b-2 pad-1 center" type="text" name="restaurant[cuisine]" placeholder="Cuisine">
+  <input class="block w-70 mar-t-2 mar-b-3 pad-2 round-1 text-c submit center" type="submit" value="BELP IT">
+</form>
+
+
