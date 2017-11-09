@@ -1,5 +1,5 @@
 body {
- background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+ background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
 
 header {
@@ -87,13 +87,17 @@ nav li{
 }
 
 .main-header {
- font-family: 'Playfair Display', serif;
- font-size: 2em;
+ font-family: 'Cinzel', serif;
+ font-size: 3em;
+ letter-spacing: 5px;
+ padding-left: 2cm;
+ padding-top: 2cm;
+ position: static;
 }
 
 
 
-/*a.button {
+a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -104,13 +108,12 @@ nav li{
 }
 
 
-.article-box ul{
+.restaurant-box ul{
   flex-direction: row;
   justify-content: center;
     padding: 0;
   margin: 0;
   list-style: none;
-  border: 1px solid silver;
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -122,43 +125,64 @@ nav li{
 }
 
 
-.article-box li {
-  background: #EBFC67;
+.restaurant-box li {
+  background: #7FDBFF;
   padding: 25px;
   width: 300px;
   margin: 30px;
 }
 
 
-.article-box li a {
+.restaurant-box li a {
   font-family: 'Abril Fatface', cursive;
   font-size: 2em;
   text-decoration: none;
   letter-spacing: 2px;
 }
 
-.article-box li a:link {
+.restaurant-box li a:link {
   color: #b74e28;
 }
 
-.article-box li a:visited {
+.restaurant-box li a:visited {
   color: #600b2a;
 
 }
 
-.article-box li a:hover {
+.restaurant-box li a:hover {
   text-decoration: underline;
-}*/
+}
 
 
+.restaurant-show-header{
+  font-size: 3em;
+  letter-spacing: 2px;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
 
-/*Graident styled form template:
+}
+
+.descriptions {
+  font-size: 2.5em; 
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+  font-style: 
+}
+
+.rating-comments{
+  font-size: 1.5em;
+  font-style: font-family: 'Cinzel', serif;
+}
+
+
+Graident styled form template:
 
 form:focus, input:focus {
   border: 2px solid #900;
 }
 
-form {
+.form {
   background: -webkit-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%);
   margin: auto;
   position: relative;
@@ -177,7 +201,7 @@ form {
   border: inset 1px solid #333;
 }
 
-input {
+.input {
   width: 175px;
   display: block;
   border: 1px solid #999;
@@ -187,7 +211,7 @@ input {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
-
+/*
 button {
   width: 100px;
   position: absolute;

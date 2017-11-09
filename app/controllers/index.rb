@@ -1,5 +1,5 @@
 # home of all homes
 get '/' do
-  erb :index
+  redirect '/restaurants'
 end
 

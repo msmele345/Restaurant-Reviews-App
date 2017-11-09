@@ -1,0 +1,71 @@
+<h3 class="restaurant-show-header"><%= @restaurant.name %> 's Reviews Page</h3>
+
+
+<div>
+  <ul>
+    <dt>
+         <p class="descriptions">Name: </p>
+         <p><%= @restaurant.name%> </p>
+         <p class="descriptions">Hood: </p>
+         <p><%= @restaurant.location%> </p>
+         <p class="descriptions">Best known for its.. </p>
+         <p><%= @restaurant.cuisine%> </p>
+       <% if @restaurant.reviews.length > 0 %>
+         <p class="descriptions">Average BELP critic rating: </p>
+         <p><%= @restaurant.average_rating%> </p>
+       <% end %>
+       </li>
+    </dt>
+</div>
+	
+
+<div align="center">
+	<h3><%= @restaurant.name %>'s BELP Reviews:</h3>
+  <ul>
+  	<% if @restaurant.reviews.length > 0 %>
+  		<% @restaurant.reviews.each do |review| %>
+  		<dt>
+  			<p>****<%= review.rating %>****</p>
+  			<p><%= review.critic.username %></p>
+  			<p class="rating-comments">**<%= review.comments %>**</p>
+  		</dt>
+  		<% end  %>
+  	<% end %>
+  </ul>
+</div>
+
+
+<div>
+	<h3 align="center">Have you visited <%= @restaurant.name %> ? Tell us how it was!</h3>
+
+	<% if @errors %>
+		 <%= erb :"_errors", locals: { errors: @errors } %>
+	<% end %>
+
+<form method="POST" action="/restaurants/<%= @restaurant.id  %>/reviews/new">
+  <input class="block w-40 mar-t-2 mar-b-2 pad-1 center" type="text" name="review[rating]" placeholder="rating">
+  <input class="block w-40 mar-t-2 mar-b-2 pad-1 center" type="textarea" name="review[comments]" placeholder="Comments">
+  <input class="block w-40 mar-t-2 mar-b-3 pad-2 round-1 text-c submit center" type="submit" value="BELP IT">
+</form>
+
+</div>
+
+
+
+
+<div align="center">
+   <% if logged_in? && @restaurant.uploaded_critic_id == current_user.id %>
+   <a href="/restaurants/<%= @restaurant.id %>/edit">
+    <button>Edit your BELP entry</button>
+  </a>
+  <% end %>
+</div><br><br>
+
+<div align="center">
+   <% if logged_in? && @restaurant.uploaded_critic_id == current_user.id  %>
+  <form id="delete-button" method="POST" action="/restaurants/<%= @restaurant.id %>">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" class="button" value="delete" />
+  </form>
+  <% end %>
+</div><br><br>

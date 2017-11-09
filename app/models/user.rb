@@ -1,10 +1,14 @@
 class User < ActiveRecord::Base
   include BCrypt
 
-  validates :first_name, :last_name, :username, :email, presence: true
+  validates :username, :email, presence: true
   validates :username, :email, uniqueness: true
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validate :validate_password
+
+  has_many :restaurants, foreign_key: :uploaded_critic_id
+  has_many :reviews, foreign_key: :critic_id
+  has_many :reviewed_restaurants, through: :reviews, source: :restaurant
 
   def password
     @password ||= Password.new(encrypted_password)
