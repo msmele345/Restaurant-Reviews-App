@@ -27,7 +27,7 @@
       <nav>
         <ul>
           <li>
-            <a href="/users/<%= current_user.id %>">Hello, <%= current_user.first_name %></a>
+            <a href="/users/<%= current_user.id %>">Hello, <%= current_user.username %></a>
           </li>
           <li class="no-style-button">
             <form method="POST" action="/sessions">
